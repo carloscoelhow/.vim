@@ -14,7 +14,7 @@ Go to your home folder a clone this repo.
 
 ~~~
 $ cd ~
-$ git
+$ git clone ...
 ~~~
 
 ### Creating a symbolic link
@@ -69,12 +69,12 @@ We can use specific settings depending on the languaje we use. For example, let'
 When writting python, one very usefull trick is autoindentation. To follow the PEP8 indentation, we can use some instructions to configure it:
 
 ```
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set smartindent
+au BufNewFile,BufRead *.py set fileformat=unix
 ```
