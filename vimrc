@@ -1,17 +1,64 @@
+set nocompatible              " required
+filetype off                  " required
 
-" To choose the theme
-syntax enable
-set background=dark
-colorscheme solarized
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Shows the line number
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+" Files Tree Window
+Plugin 'scrooloose/nerdtree.git'
+
+" Cool vim status line
+Plugin 'vim-airline/vim-airline.git'
+
+" Git visual integration
+Plugin 'airblade/vim-gitgutter'
+
+" Syntax checking
+Plugin 'vim-syntastic/syntastic'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" vim naigation on Spanish Keyboard
+nnoremap j h
+nnoremap k j
+nnoremap l k
+nnoremap ñ l
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+set encoding=utf-8
+
+" high light things
+let python_highlight_all=1
+syntax on
+
+" Line numbers
 set number
 
-" Code folding
+" Foldings
 set foldmethod=indent
-"set foldlevel=99
 
-" removing whitespaces
+" Removing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Better searching
@@ -31,3 +78,7 @@ au BufNewFile,BufRead *.py set expandtab
 au BufNewFile,BufRead *.py set autoindent
 au BufNewFile,BufRead *.py set smartindent
 au BufNewFile,BufRead *.py set fileformat=unix
+
+" Theme
+set background=dark
+colorscheme solarized
