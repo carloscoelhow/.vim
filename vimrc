@@ -81,4 +81,4 @@ au BufNewFile,BufRead *.py set fileformat=unix
 
 " Theme
 set background=dark
-colorscheme solarized
+colorscheme Tomorrow-Night
