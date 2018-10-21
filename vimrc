@@ -20,12 +20,30 @@ Plugin 'scrooloose/nerdtree.git'
 " Cool vim status line
 Plugin 'vim-airline/vim-airline.git'
 
+" Some airline themes
+Plugin 'vim-airline/vim-airline-themes'
+
 " Git visual integration
 Plugin 'airblade/vim-gitgutter'
 
 " Syntax checking
 Plugin 'vim-syntastic/syntastic'
 
+" Dev-icons
+" you can use some of this fonts: https://github.com/ryanoasis/nerd-fonts
+Plugin 'ryanoasis/vim-devicons'
+
+" Improved motion
+Plugin 'yuttie/comfortable-motion.vim'
+
+" Colored parentheses
+Plugin 'kien/rainbow_parentheses.vim'
+
+" For Go developers
+Plugin 'fatih/vim-go'
+
+" Cool colorscheme
+Plugin 'jacoborus/tender.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,7 +64,7 @@ nnoremap <C-H> <C-W><C-H>
 " Enable folding with the spacebar
 nnoremap <space> za
 
-set encoding=utf-8
+set encoding=UTF-8
 
 " high light things
 let python_highlight_all=1
@@ -80,5 +98,14 @@ au BufNewFile,BufRead *.py set smartindent
 au BufNewFile,BufRead *.py set fileformat=unix
 
 " Theme
-set background=dark
-colorscheme Tomorrow-Night
+" set background=dark
+" colorscheme Tomorrow-Night
+" Tender theme
+if (has("termguicolors"))
+ set termguicolors
+endif
+syntax enable
+colorscheme tender
+
+" set airline theme
+let g:airline_theme = 'light'
