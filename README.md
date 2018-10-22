@@ -8,7 +8,10 @@ environment with vim. Now some notes on how to achieve this config:
 
 ### Install vim
 
-Instal vim. This depends on the operative system you use.
+Instal vim. This depends on the operative system you use. When working in ubuntu, for example
+```
+sudo apt-get install vim
+```
 
 ### Clone this repo
 
@@ -38,7 +41,7 @@ git clone https://github.com/VundleVim/Vundle.vim
 ```
 
 
-#### Creat a symbolic link
+#### Creat a symbolic link to vimrc
 
 Usually vim needs a .vimrc file at your home folder. However, in order to get all the benefits of git, we're going to create a symbolic link that points to our `/.vim/vimrc` file. To achieve this, in the file we do:
 
@@ -48,9 +51,24 @@ $ ln -s ~/.vim/vimrc ~/.vimrc
 
 Now, when our system need the .vimrc file, it will know where to find it.
 
+
+#### Install nerd fonts
+
+Now some fonts are installed. This can take some time. First we clone the following repo:
+
+~~~
+https://github.com/ryanoasis/nerd-fonts
+~~~
+
+And then the `install.sh` file is executed to complete the installation of all fonts. Its posible to install only the fonts you want. In order to achieve this, remove the last line from `init.sh` and execute:
+
+~~~
+bash ~/.fonts/install.sh <the-name-of-the-font-you-want-to-install>
+~~~
+
 ### Install plugins
 
-The first time you execute vim you'll have to install the plugins included in the .vimrc. In order to achieve this, you shoud execute the command
+The first time you execute vim you'll have to install the plugins included in the .vimrc. In order to achieve this, you should execute the command
 
 ```
 :PluginInstall
@@ -58,17 +76,10 @@ The first time you execute vim you'll have to install the plugins included in th
 
 Another tab will appear with the progress of the instalation. To reinstall use `:PluginInstall!` and `:PluginUpdate` to update plugins. You can use other commands like `:PluginSearch`, and a lot more. See `:h vundle` for more information.
 
-### Choosing a theme
+#### Plugins description
 
-You can keep all yout themes at `~/.vim/colors`. You can found a lot of vim themes freely available (maybe [vimcolors](http://vimcolors.com/) can be a good place to start). All the files end with the file extension `.vim`. Some themes are already included with this repo.
+To do.
 
-Once you've have choosen a theme, you have to modify the `vimrc` file. For example, if we want to use _Solarized_, we have to include the following lines in the `vimrc` configuration file:
-
-```
-syntax enable
-set background=dark
-colorscheme solarized
-```
 
 ### Other usefull stuff
 
