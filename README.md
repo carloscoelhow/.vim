@@ -9,25 +9,26 @@ environment with vim. Now some notes on how to achieve this config:
 ### Install vim
 
 Instal vim. This depends on the operative system you use. When working in ubuntu, for example
-```
-sudo apt-get install vim
+
+```bash
+$ sudo apt-get install vim
 ```
 
 ### Clone this repo
 
 Go to your home folder a clone this repo.
 
-~~~
+```bash
 $ cd ~
 $ git clone https://github.com/ivanCanaveral/.vim
-~~~
+```
 
 ### Run init.sh
 
-Execute the script `ìnit.sh``.
+Execute the script `init.sh`.
 
-```
-bash init.sh
+```bash
+$ bash init.sh
 ```
 
 This action does the following actions
@@ -36,8 +37,8 @@ This action does the following actions
 
 Vundle helps us to manage vim plugins.
 
-```
-git clone https://github.com/VundleVim/Vundle.vim
+```bash
+$ git clone https://github.com/VundleVim/Vundle.vim
 ```
 
 
@@ -45,7 +46,7 @@ git clone https://github.com/VundleVim/Vundle.vim
 
 Usually vim needs a .vimrc file at your home folder. However, in order to get all the benefits of git, we're going to create a symbolic link that points to our `/.vim/vimrc` file. To achieve this, in the file we do:
 
-```
+```bash
 $ ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
@@ -56,21 +57,21 @@ Now, when our system need the .vimrc file, it will know where to find it.
 
 Now some fonts are installed. This can take some time. First we clone the following repo:
 
-~~~
+```
 https://github.com/ryanoasis/nerd-fonts
-~~~
+```
 
 And then the `install.sh` file is executed to complete the installation of all fonts. Its posible to install only the fonts you want. In order to achieve this, remove the last line from `init.sh` and execute:
 
-~~~
+```bash
 bash ~/.fonts/install.sh <the-name-of-the-font-you-want-to-install>
-~~~
+```
 
 ### Install plugins
 
 The first time you execute vim you'll have to install the plugins included in the .vimrc. In order to achieve this, you should execute the command
 
-```
+```vim
 :PluginInstall
 ```
 
@@ -85,19 +86,19 @@ To do.
 
 Now we can add a lot of settings our `vimrc` file. For example, set the enconding
 
-```
+```vim
 set enconding=utf-8
 ```
 
 or make vim to show the line numbers,
 
-```
+```vim
 set number
 ```
 
 Other usefull trick can be code folding at identations
 
-```
+```vim
 set foldmethod=indent
 set foldlevel=99
 ```
@@ -110,7 +111,7 @@ We can use specific settings depending on the languaje we use. For example, let'
 
 When writting python, one very usefull trick is autoindentation. To follow the PEP8 indentation, we can use some instructions to configure it:
 
-```
+```vim
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
