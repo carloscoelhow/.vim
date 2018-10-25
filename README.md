@@ -64,7 +64,7 @@ https://github.com/ryanoasis/nerd-fonts
 And then the `install.sh` file is executed to complete the installation of all fonts. Its posible to install only the fonts you want. In order to achieve this, remove the last line from `init.sh` and execute:
 
 ```bash
-bash ~/.fonts/install.sh <the-name-of-the-font-you-want-to-install>
+$ bash ~/.fonts/install.sh <the-name-of-the-font-you-want-to-install>
 ```
 
 ### Install plugins
